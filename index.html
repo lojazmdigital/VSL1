@@ -17,6 +17,20 @@
   document.head.appendChild(a);
 </script>
 
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '951144294167412');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=951144294167412&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+
 <link rel="preload" href="https://scripts.converteai.net/5d9f8480-70ee-4640-ab7d-afc37958aa16/players/69a8fe8e107d0d389957d9e3/v4/player.js" as="script">
 <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
 <link rel="preload" href="https://cdn.converteai.net/5d9f8480-70ee-4640-ab7d-afc37958aa16/69a8fe5cf0493964ec919fa0/main.m3u8" as="fetch">
@@ -208,7 +222,7 @@
 <!-- CTA — aparece após o vídeo -->
 <div id="cta-section">
   <span class="arrow-pulse">👇</span>
-  <a href="https://pay.kiwify.com.br/8ThUANn?afid=5huHMkSa" class="cta-btn" target="_blank" rel="noopener">
+  <a href="https://kiwify.app/0ULtG4j?afid=5huHMkSa" class="cta-btn" target="_blank" rel="noopener">
     ✅ SIM! QUERO COMEÇAR AGORA
   </a>
   <p class="cta-sub">🔒 Pagamento 100% seguro &nbsp;|&nbsp; <span>Garantia de 7 dias</span></p>
@@ -260,7 +274,11 @@ src="https://cdn.utmify.com.br/scripts/utms/latest.js"
 (function() {
   function showCTA() {
     var sec = document.getElementById("cta-section");
-    if (sec) { sec.classList.add("visible"); sec.scrollIntoView({ behavior: "smooth", block: "center" }); }
+    if (sec) {
+      sec.classList.add("visible");
+      sec.scrollIntoView({ behavior: "smooth", block: "center" });
+      if(typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout');
+    }
   }
 
   // Escuta evento nativo do Vturb (smartplayer ended)
